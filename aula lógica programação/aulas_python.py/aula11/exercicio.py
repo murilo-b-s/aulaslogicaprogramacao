@@ -92,3 +92,23 @@ while True:
     if escolha == '8':
         # seu código aqui
         pass
+
+
+while True:
+    escolha = input("Escolha: ")
+    if escolha == '5':
+        # seu código aqui
+        tem_par = False
+
+        for elemento_A in listaA:
+            try:
+                if int(elemento_A) % 2 == 0:  # significa que o número é par
+                    listaB.append(elemento_A)
+                    tem_par = True
+            except ValueError:
+                pass
+        if tem_par == True:
+            print(listaB)
+        else:
+            print("Não há elementos pares na listaA.")
+
