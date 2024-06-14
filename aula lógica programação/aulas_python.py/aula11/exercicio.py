@@ -7,14 +7,6 @@ Você deverá finalizar o código implementando
 as opções que faltam.
 """
 
-
-def transforma_numeros(elemento):
-    try:
-        int(elemento)
-        return True
-    except ValueError:
-        return False
-
 menu = """
     ========================================
     1- Adicionar um elemento na listaA
