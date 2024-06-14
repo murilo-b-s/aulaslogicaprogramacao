@@ -19,9 +19,9 @@ menu = """
     ========================================
     1- Adicionar um elemento na listaA
     2- Retirar um elemento na listaA
-    3- Digite um número e mostre sua posição 
+    3- Digite um elemento e mostre sua posição 
         na listaA
-    4- Digite uma posição e diga qual o número 
+    4- Digite uma posição e diga qual o elemento 
         ocupa essa posição na listaA
     5- Copie todos os números para pares da 
         listaA para a listaB
@@ -34,18 +34,16 @@ menu = """
 
 listaA = []
 listaB = []
+listaC = []
 lista_numeros = []
 
-listaA = ['6', '4', '5', '89','amoeba', '4']
+listaA = ['6', '4', '5', '89', '4', '35']
 while True:
     print(menu)
     escolha = input("Escolha: ")
     if escolha == '1':
         elemento = input("Digite o que deseja adicionar à lista A: ")
-        if elemento.isdigit():
-            listaA.append(int(elemento))
-        else:
-            listaA.append(elemento)
+        listaA.append(elemento)
         print(listaA)
         continue
 
@@ -59,7 +57,7 @@ while True:
         continue
 
     if escolha == '3':
-        elemento = input("Digite o número: ")
+        elemento = input("Digite um elemento: ")
         if elemento in listaA:
             posicao = listaA.index(elemento)
             print(posicao)
@@ -71,44 +69,41 @@ while True:
         posicao = int(input("Digite o índice que deseja saber: "))
         if 0 <= posicao < len(listaA):
             elemento = listaA[posicao]
-            print(elemento)
+            print(f"O elemento na posição {posicao} é {listaA[posicao]}")
         else:
             print("O índice digitado não existe na lista A")
         continue
 
     if escolha == '5':
-        for i in listaA:
-            if i == int:
-                if i%2 == 0:
-                    listaB.append(i)
-        print(listaB)
-        pass
-    if escolha == '6':
-        # seu código aqui
-        pass
-    if escolha == '7':
-        # seu código aqui
-        pass
-    if escolha == '8':
-        # seu código aqui
-        pass
-
-
-while True:
-    escolha = input("Escolha: ")
-    if escolha == '5':
-        # seu código aqui
-        tem_par = False
-
         for elemento_A in listaA:
             try:
-                if int(elemento_A) % 2 == 0:  # significa que o número é par
+                if int(elemento_A) % 2 == 0:
                     listaB.append(elemento_A)
-                    tem_par = True
             except ValueError:
                 pass
-        if tem_par == True:
-            print(listaB)
-        else:
-            print("Não há elementos pares na listaA.")
+        print(listaB)
+        continue
 
+    if escolha == '6':
+        for elemento in listaA:
+            if len(elemento) == 2:
+                listaC.append(elemento)
+        print(listaC)
+        continue
+
+    if escolha == '7':
+        print("Lista A:")
+        for ind, elemento in enumerate(listaA):
+            print(f"{ind} - {elemento}")
+
+        print("Lista B:")
+        for ind, elemento in enumerate(listaB):
+            print(f"{ind} - {elemento}")
+
+        print("Lista C:")
+        for ind, elemento in enumerate(listaC):
+            print(f"{ind} - {elemento}")
+        
+        continue
+    if escolha == '8':
+        break
