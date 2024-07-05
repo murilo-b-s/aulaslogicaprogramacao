@@ -40,22 +40,6 @@ menu = """
     ================================
 """
 
-
-def c():
-    while True:
-        login = input("Digite o seu nome de usuário:")
-        if login == "":
-            print("Nome de usuário vazio.")
-            continue
-        if login in lst_logins:
-            print("Esse nome de usuário já existe: ")
-            continue
-        lst_logins.append(login)
-        break
-    return login
-
-
-
 lst_logins = ['murilo22', 'caio4o', 'murilo']
 lst_senhas = ['abc', 'cbd', 'mur']
 
@@ -68,7 +52,14 @@ while True:
         
     if escolha == "1":
         while True:
-            c():
+            login = input("Digite o seu nome de usuário:")
+            if login == "":
+                print("Nome de usuário vazio.")
+                continue
+            if login in lst_logins:
+                print("Esse nome de usuário já existe: ")
+                continue
+            lst_logins.append(login)
             break
         
         i = 1
@@ -155,3 +146,4 @@ while True:
             lst_logins.pop(indice)
             lst_senhas.pop(indice)
             break
+        
